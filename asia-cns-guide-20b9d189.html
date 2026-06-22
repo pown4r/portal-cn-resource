@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南宫28 · 站点介绍与可信说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f3f5f8;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 0 1.2rem 3rem;
+        }
+        .page-wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding-top: 0.5rem;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 0.75rem 1.6rem;
+            border-radius: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.02);
+            border: 1px solid #e4e8ed;
+            margin: 1.2rem 0 2.8rem;
+        }
+        .logo {
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
+            color: #1e2a3a;
+        }
+        .logo span {
+            color: #2b6f9c;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.95rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #3b4a5c;
+            transition: color 0.15s;
+        }
+        .nav-links a:hover {
+            color: #1e2a3a;
+        }
+        .nav-cta {
+            background: #eef2f6;
+            padding: 0.35rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border: 1px solid #d4dbe4;
+        }
+
+        /* hero 区 */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 3rem 2.5rem 2.8rem;
+            border: 1px solid #e1e7ed;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.75rem;
+            color: #0f1e2f;
+        }
+        .hero h1 i {
+            font-style: normal;
+            background: #e9edf3;
+            padding: 0 0.6rem;
+            border-radius: 30px;
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 1rem;
+            color: #3e4f62;
+            font-size: 1.05rem;
+        }
+        .hero .tagline {
+            background: #f0f4fa;
+            display: inline-block;
+            padding: 0.2rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #2b5d7a;
+            border: 1px solid #d6e0ea;
+            margin-top: 0.4rem;
+        }
+
+        /* 介绍卡片区域 */
+        .intro-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2.2rem;
+            border: 1px solid #e1e7ef;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            margin-bottom: 2.5rem;
+        }
+        .intro-card h2 {
+            font-size: 1.45rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2b6f9c;
+            padding-left: 1rem;
+        }
+        .intro-card p {
+            margin-bottom: 0.9rem;
+            color: #2a3b4e;
+        }
+
+        /* 三场景模块 */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+        .scene-card {
+            background: #ffffff;
+            border: 1px solid #e1e7ee;
+            border-radius: 24px;
+            padding: 1.8rem 1.6rem 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+        .scene-card:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+            transform: translateY(-2px);
+        }
+        .scene-card .emoji-badge {
+            font-size: 2rem;
+            line-height: 1;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            background: #edf2f9;
+            padding: 0.2rem 0.6rem;
+            border-radius: 40px;
+        }
+        .scene-card h3 {
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #0f1f2f;
+        }
+        .scene-card p {
+            color: #3d4e62;
+            font-size: 0.95rem;
+        }
+
+        /* 常见说明 (FAQ 摘要) */
+        .faq-section {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2.2rem 2.2rem;
+            border: 1px solid #e1e7ef;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            margin-bottom: 2.5rem;
+        }
+        .faq-section h2 {
+            font-size: 1.45rem;
+            font-weight: 500;
+            margin-bottom: 1.4rem;
+            border-left: 4px solid #2b6f9c;
+            padding-left: 1rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e9eef4;
+            padding: 1rem 0 0.9rem;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item .q {
+            font-weight: 500;
+            color: #1b2b3d;
+            margin-bottom: 0.3rem;
+        }
+        .faq-item .a {
+            color: #46596c;
+            font-size: 0.95rem;
+        }
+
+        /* 信任与链接条 */
+        .trust-line {
+            background: #ffffff;
+            border: 1px solid #e1e7ef;
+            border-radius: 40px;
+            padding: 1.2rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            margin-top: 0.5rem;
+        }
+        .trust-line .text {
+            color: #2d4055;
+            font-size: 0.98rem;
+        }
+        .trust-line a {
+            font-weight: 500;
+            color: #1e5b7e;
+            text-decoration: none;
+            border-bottom: 1px dotted #b0c6d8;
+        }
+        .trust-line a:hover {
+            color: #0d3b55;
+            border-bottom: 1px solid #1e5b7e;
+        }
+        .trust-line .light {
+            color: #6f8196;
+            font-size: 0.9rem;
+            background: #eef3f9;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 820px) {
+            .scenes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 620px) {
+            .scenes-grid {
+                grid-template-columns: 1fr;
+            }
+            .top-nav {
+                flex-direction: column;
+                gap: 0.6rem;
+                align-items: flex-start;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem 1.8rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .trust-line {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+                border-radius: 28px;
+            }
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+        }
+        @media (max-width: 460px) {
+            .intro-card,
+            .faq-section {
+                padding: 1.6rem 1.4rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 导航 -->
+    <nav class="top-nav">
+        <div class="logo"><span>◆</span> 南宫站</div>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">场景</a>
+            <a href="#">说明</a>
+            <span class="nav-cta">可信指引</span>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <section class="hero">
+        <h1>南宫28 · 站点介绍 <i>|</i> 可信说明</h1>
+        <p>一个关于信息查阅与日常使用的简明页面，从真实需求出发，提供轻量、清晰的导航印象。</p>
+        <div class="tagline">基于公开信息 · 生活化视角</div>
+    </section>
+
+    <!-- 介绍卡片 -->
+    <div class="intro-card">
+        <h2>关于这个站点</h2>
+        <p><strong>南宫28</strong> 是一个指向特定网络资源的名称标识，许多朋友在搜索或日常交流中都会遇到。这个介绍页旨在帮助新接触的朋友快速了解其定位，并提供一个直观、可信的参考入口。</p>
+        <p>页面内容围绕 <strong>站点背景、常见使用场景、以及基础说明</strong> 展开，不包含任何夸大描述或诱导引导。所有信息均以客观、克制的态度整理，便于浏览者自行判断。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes-grid">
+        <div class="scene-card">
+            <div class="emoji-badge">📘</div>
+            <h3>日常查询</h3>
+            <p>当你需要快速打开 <a href="https://asia-cns-nangong28.com" style="color: #1e5b7e; text-decoration: underline; text-underline-offset: 3px;">南宫28</a> 的相关页面时，可直接通过顶部链接或下面信任条中的地址访问。无需重复搜索，节省时间。</p>
+        </div>
+        <div class="scene-card">
+            <div class="emoji-badge">🧩</div>
+            <h3>信息确认</h3>
+            <p>在不确定链接或名称时，可以将这里作为一个轻量的参考点。页面所提及的 <a href="https://asia-cns-nangong28.com" style="color: #1e5b7e; text-decoration: underline; text-underline-offset: 3px;">南宫28</a> 即对应资源，名称与网址一致，便于核对。</p>
+        </div>
+        <div class="scene-card">
+            <div class="emoji-badge">🪄</div>
+            <h3>分享与备忘</h3>
+            <p>如果你需要向朋友或同事介绍这个站点，可以直接分享本页。页面中的链接文本均明确为「南宫28」，清晰无歧义，适合作为简单的导航备忘。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-section">
+        <h2>常见说明 · 摘要</h2>
+        <div class="faq-item">
+            <div class="q">❓ 这个页面是南宫28的官方网站吗？</div>
+            <div class="a">不是。这是一个独立制作的介绍页，目的是提供导航与说明。页面中指向的地址 <a href="https://asia-cns-nangong28.com" style="color: #1e5b7e;">南宫28</a> 才是目标资源所在地。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">❓ 为什么要制作这样一个页面？</div>
+            <div class="a">为了方便日常引用和轻量介绍，尤其适合在聊天、笔记或文档中给出一个干净、可信的说明片段，减少误解。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">❓ 链接安全吗？</div>
+            <div class="a">页面中出现的链接都是直白的地址文本，不经过任何跳转或中间页。你可以直接复制或点击 <a href="https://asia-cns-nangong28.com" style="color: #1e5b7e;">南宫28</a> 以访问对应站点。</div>
+        </div>
+    </div>
+
+    <!-- 信任与链接条 (含主要a标签) -->
+    <div class="trust-line">
+        <span class="text">🔗 直接访问：<a href="https://asia-cns-nangong28.com">南宫28</a> · 名称与网址完全对应</span>
+        <span class="light">内容仅供说明参考</span>
+    </div>
+
+    <!-- 底部留白微信息 -->
+    <div style="margin-top: 2rem; text-align: center; font-size: 0.8rem; color: #8a9baf; border-top: 1px solid #e2e8f0; padding-top: 1.2rem; letter-spacing: 0.3px;">
+        页面版本 · 轻量导航式 · 内容保持真实与克制
+    </div>
+
+</div>
+</body>
+</html>
